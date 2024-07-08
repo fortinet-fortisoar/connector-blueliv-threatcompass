@@ -1,0 +1,690 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "1f6d02cd-d54a-44c2-a18e-6f352e20e266",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "99c8b9f9-2cd7-44aa-9b34-5d2edee87a7f",
+          "collection": "/api/3/workflow_collections/1f6d02cd-d54a-44c2-a18e-6f352e20e266",
+          "steps": [
+            {
+              "uuid": "b8b11ce7-047a-4822-85fb-8246faa8142f",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "c4abd8fc-74be-45ae-b5b3-f54ebc48af84",
+              "@type": "WorkflowStep",
+              "name": "Get Resource List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Blueliv ThreatCompass",
+                "config": "",
+                "params": {
+                  "org_id": "0",
+                  "module_id": "",
+                  "to": "",
+                  "since": 1,
+                  "page": 1,
+                  "maxRows": 10,
+                  "other_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "blueliv-threatcompass",
+                "operation": "get_resource_list",
+                "operationTitle": "Get Resource List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves the list of Resources for the specified Organization and Module",
+          "name": "Get Resource List",
+          "tag": "#Blueliv ThreatCompass",
+          "recordTags": [
+            "Blueliv",
+            "blueliv-threatcompass"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b8b11ce7-047a-4822-85fb-8246faa8142f",
+          "routes": [
+            {
+              "uuid": "a3930984-0b0b-464d-a1a3-16d2ae816ff9",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Resource List",
+              "sourceStep": "/api/3/workflow_steps/b8b11ce7-047a-4822-85fb-8246faa8142f",
+              "targetStep": "/api/3/workflow_steps/c4abd8fc-74be-45ae-b5b3-f54ebc48af84"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ccbe295f-1527-47fa-ad6d-569d4eae4856",
+          "collection": "/api/3/workflow_collections/1f6d02cd-d54a-44c2-a18e-6f352e20e266",
+          "steps": [
+            {
+              "uuid": "30272fd4-035c-4b81-8fde-537f146ffb14",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "9222fd35-8943-446f-8898-a495ebdb1082",
+              "@type": "WorkflowStep",
+              "name": "Get Resource",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Blueliv ThreatCompass",
+                "config": "",
+                "params": {
+                  "org_id": "0",
+                  "module_id": "",
+                  "resource_id": "",
+                  "other_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "blueliv-threatcompass",
+                "operation": "get_resource",
+                "operationTitle": "Get Resource"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves the Resource for the specified Organization and Module based on Resource ID",
+          "name": "Get Resource",
+          "tag": "#Blueliv ThreatCompass",
+          "recordTags": [
+            "Blueliv",
+            "blueliv-threatcompass"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/30272fd4-035c-4b81-8fde-537f146ffb14",
+          "routes": [
+            {
+              "uuid": "8e598e7f-1e80-455a-b310-21077874a295",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Resource",
+              "sourceStep": "/api/3/workflow_steps/30272fd4-035c-4b81-8fde-537f146ffb14",
+              "targetStep": "/api/3/workflow_steps/9222fd35-8943-446f-8898-a495ebdb1082"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "1619eb70-d7e2-4b8f-a8d9-a9dcc8365b18",
+          "collection": "/api/3/workflow_collections/1f6d02cd-d54a-44c2-a18e-6f352e20e266",
+          "steps": [
+            {
+              "uuid": "5d671d5f-74e5-427d-b065-1f4c7fd3fb83",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "fc699284-b355-4ed7-8048-43d8a1cbbf27",
+              "@type": "WorkflowStep",
+              "name": "Set Resource Status",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Blueliv ThreatCompass",
+                "config": "",
+                "params": {
+                  "org_id": "0",
+                  "module_id": "",
+                  "module_type": "",
+                  "resource_id": "",
+                  "status": "",
+                  "other_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "blueliv-threatcompass",
+                "operation": "set_resource_status",
+                "operationTitle": "Set Resource Status"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Modifies the Resource status for the specified Organization and Module based on Resource ID and status",
+          "name": "Set Resource Status",
+          "tag": "#Blueliv ThreatCompass",
+          "recordTags": [
+            "Blueliv",
+            "blueliv-threatcompass"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/5d671d5f-74e5-427d-b065-1f4c7fd3fb83",
+          "routes": [
+            {
+              "uuid": "71993273-1eda-42d8-8a90-9c42bf50e6e4",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Set Resource Status",
+              "sourceStep": "/api/3/workflow_steps/5d671d5f-74e5-427d-b065-1f4c7fd3fb83",
+              "targetStep": "/api/3/workflow_steps/fc699284-b355-4ed7-8048-43d8a1cbbf27"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "7b3d2776-598a-475a-91d1-bc842213a698",
+          "collection": "/api/3/workflow_collections/1f6d02cd-d54a-44c2-a18e-6f352e20e266",
+          "steps": [
+            {
+              "uuid": "cea8ceea-7a37-446e-a5c8-05e7b861b9ba",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "7aa02e19-ec11-4bae-9a0d-f03caa7a3664",
+              "@type": "WorkflowStep",
+              "name": "Set Resource Label",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Blueliv ThreatCompass",
+                "config": "",
+                "params": {
+                  "org_id": "0",
+                  "module_id": "",
+                  "module_type": "",
+                  "resources": "",
+                  "label": "",
+                  "other_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "blueliv-threatcompass",
+                "operation": "set_resource_label",
+                "operationTitle": "Set Resource Label"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Modifies the Resource Label for the specified Organization and Module based on Resource ID and Label",
+          "name": "Set Resource Label",
+          "tag": "#Blueliv ThreatCompass",
+          "recordTags": [
+            "Blueliv",
+            "blueliv-threatcompass"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/cea8ceea-7a37-446e-a5c8-05e7b861b9ba",
+          "routes": [
+            {
+              "uuid": "d52376cd-de1d-4025-a3cd-9438a103cf60",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Set Resource Label",
+              "sourceStep": "/api/3/workflow_steps/cea8ceea-7a37-446e-a5c8-05e7b861b9ba",
+              "targetStep": "/api/3/workflow_steps/7aa02e19-ec11-4bae-9a0d-f03caa7a3664"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "4dda7da7-68e8-49c4-b733-26cabda35a71",
+          "collection": "/api/3/workflow_collections/1f6d02cd-d54a-44c2-a18e-6f352e20e266",
+          "steps": [
+            {
+              "uuid": "2bce7d80-e885-4ad9-8923-621f16509082",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "b9b72992-633b-4baf-9d37-27de7c05b0a7",
+              "@type": "WorkflowStep",
+              "name": "Set Resource Read Status",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Blueliv ThreatCompass",
+                "config": "",
+                "params": {
+                  "org_id": "0",
+                  "module_id": "",
+                  "module_type": "",
+                  "resources": "",
+                  "read": "",
+                  "other_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "blueliv-threatcompass",
+                "operation": "set_resource_read_status",
+                "operationTitle": "Set Resource Read Status"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Modifies the Read Status of Resource for the specified Organization and Module based on Resource ID",
+          "name": "Set Resource Read Status",
+          "tag": "#Blueliv ThreatCompass",
+          "recordTags": [
+            "Blueliv",
+            "blueliv-threatcompass"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2bce7d80-e885-4ad9-8923-621f16509082",
+          "routes": [
+            {
+              "uuid": "8d45e3d5-2bac-4859-beea-ce0ec24e58ae",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Set Resource Read Status",
+              "sourceStep": "/api/3/workflow_steps/2bce7d80-e885-4ad9-8923-621f16509082",
+              "targetStep": "/api/3/workflow_steps/b9b72992-633b-4baf-9d37-27de7c05b0a7"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "4eb858d6-7b48-472a-8027-913b9e785ba3",
+          "collection": "/api/3/workflow_collections/1f6d02cd-d54a-44c2-a18e-6f352e20e266",
+          "steps": [
+            {
+              "uuid": "ec660d30-4ccf-45c5-b6fb-564ffa7a2417",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "43671d0b-8ea8-482f-a66b-741605717797",
+              "@type": "WorkflowStep",
+              "name": "Set Resource Rating",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Blueliv ThreatCompass",
+                "config": "",
+                "params": {
+                  "org_id": "0",
+                  "module_id": "",
+                  "module_type": "",
+                  "resources": "",
+                  "rate": "",
+                  "other_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "blueliv-threatcompass",
+                "operation": "set_resource_rating",
+                "operationTitle": "Set Resource Rating"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Modifies the Rating of Resource for the specified Organization and Module based on Resource ID",
+          "name": "Set Resource Rating",
+          "tag": "#Blueliv ThreatCompass",
+          "recordTags": [
+            "Blueliv",
+            "blueliv-threatcompass"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ec660d30-4ccf-45c5-b6fb-564ffa7a2417",
+          "routes": [
+            {
+              "uuid": "21a6c544-006d-4616-bd6f-6546bfc824da",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Set Resource Rating",
+              "sourceStep": "/api/3/workflow_steps/ec660d30-4ccf-45c5-b6fb-564ffa7a2417",
+              "targetStep": "/api/3/workflow_steps/43671d0b-8ea8-482f-a66b-741605717797"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "61bd71ae-25fe-4e19-ac42-43a616eaf02c",
+          "collection": "/api/3/workflow_collections/1f6d02cd-d54a-44c2-a18e-6f352e20e266",
+          "steps": [
+            {
+              "uuid": "33c45e5e-31a6-4f13-9b8f-a672e585bb6c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "b0503840-4376-441b-b093-9a33a258f452",
+              "@type": "WorkflowStep",
+              "name": "Set Resource FAV",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Blueliv ThreatCompass",
+                "config": "",
+                "params": {
+                  "org_id": "0",
+                  "module_id": "",
+                  "module_type": "",
+                  "resources": "",
+                  "status": "",
+                  "other_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "blueliv-threatcompass",
+                "operation": "set_resource_fav",
+                "operationTitle": "Set Resource FAV"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Modifies the Favourite Status of Resource for the specified Organization and Module based on Resource ID",
+          "name": "Set Resource FAV",
+          "tag": "#Blueliv ThreatCompass",
+          "recordTags": [
+            "Blueliv",
+            "blueliv-threatcompass"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/33c45e5e-31a6-4f13-9b8f-a672e585bb6c",
+          "routes": [
+            {
+              "uuid": "44e37ec8-fb12-4e26-9ed4-a9ce563fd744",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Set Resource FAV",
+              "sourceStep": "/api/3/workflow_steps/33c45e5e-31a6-4f13-9b8f-a672e585bb6c",
+              "targetStep": "/api/3/workflow_steps/b0503840-4376-441b-b093-9a33a258f452"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "5d1dc33f-4cdc-4c3b-ba46-97a4c8a9940f",
+          "collection": "/api/3/workflow_collections/1f6d02cd-d54a-44c2-a18e-6f352e20e266",
+          "steps": [
+            {
+              "uuid": "b1bd2dca-404a-4034-9a8b-1298f4b29f23",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "9ce06a87-3e5e-43a2-b88b-b4ec174ba203",
+              "@type": "WorkflowStep",
+              "name": "Set Resource TLP",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Blueliv ThreatCompass",
+                "config": "",
+                "params": {
+                  "org_id": "0",
+                  "module_id": "",
+                  "module_type": "",
+                  "resource_id": "",
+                  "tlp_status": "",
+                  "other_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "blueliv-threatcompass",
+                "operation": "set_resource_tlp",
+                "operationTitle": "Set Resource TLP"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Modifies the TLP Status of Resource for the specified Organization and Module based on Resource ID",
+          "name": "Set Resource TLP",
+          "tag": "#Blueliv ThreatCompass",
+          "recordTags": [
+            "Blueliv",
+            "blueliv-threatcompass"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b1bd2dca-404a-4034-9a8b-1298f4b29f23",
+          "routes": [
+            {
+              "uuid": "c1cd9013-9995-43dd-a3b3-b309c70018a7",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Set Resource TLP",
+              "sourceStep": "/api/3/workflow_steps/b1bd2dca-404a-4034-9a8b-1298f4b29f23",
+              "targetStep": "/api/3/workflow_steps/9ce06a87-3e5e-43a2-b88b-b4ec174ba203"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "869b2721-4dd5-4a80-9205-79b751a09ab8",
+          "collection": "/api/3/workflow_collections/1f6d02cd-d54a-44c2-a18e-6f352e20e266",
+          "steps": [
+            {
+              "uuid": "1d2e59fc-b967-4d1c-9cd1-30e91946061a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "2add2eba-977a-4a42-8764-b18827bf1205",
+              "@type": "WorkflowStep",
+              "name": "Get Module Labels",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Blueliv ThreatCompass",
+                "config": "",
+                "params": {
+                  "org_id": "0",
+                  "module_id": "",
+                  "module_type": "",
+                  "other_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "blueliv-threatcompass",
+                "operation": "get_module_labels",
+                "operationTitle": "Get Module Labels"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves the label list of the module for the specified Organization and Module ID",
+          "name": "Get Module Labels",
+          "tag": "#Blueliv ThreatCompass",
+          "recordTags": [
+            "Blueliv",
+            "blueliv-threatcompass"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1d2e59fc-b967-4d1c-9cd1-30e91946061a",
+          "routes": [
+            {
+              "uuid": "3a414be9-1a85-406c-bcb1-57a8d23dcc70",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Module Labels",
+              "sourceStep": "/api/3/workflow_steps/1d2e59fc-b967-4d1c-9cd1-30e91946061a",
+              "targetStep": "/api/3/workflow_steps/2add2eba-977a-4a42-8764-b18827bf1205"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - Blueliv ThreatCompass - 1.0.0",
+      "description": "Blueliv ThreatCompass systematically looks for information about companies,products, people, brands, logos, assets, technology and other information, depending on your needs. Blueliv ThreatCompass allows you to monitor and track all this information to keep your data, your organization and its employees safe",
+      "visible": true,
+      "recordTags": [
+        "Blueliv",
+        "blueliv-threatcompass"
+      ]
+    }
+  ]
+}
