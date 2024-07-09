@@ -1,0 +1,768 @@
+{
+  "name": "blueliv-threatcompass",
+  "label": "Blueliv ThreatCompass",
+  "version": "1.0.0",
+  "description": "Blueliv ThreatCompass systematically looks for information about companies,products, people, brands, logos, assets, technology and other information, depending on your needs. Blueliv ThreatCompass allows you to monitor and track all this information to keep your data, your organization and its employees safe",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "category": "Vulnerability Management",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "contributor": "",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-blueliv-threatcompass/blob/release/1.0.0/blueliv-threatcompass/docs/BluelivThreatCompass.md",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "type": "text",
+        "name": "server_url",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "placeholder": "https://example.blueliv.com",
+        "tooltip": "Specify the IP address or hostname of the ThreatCompass server to which you will connect and perform automated operations.",
+        "description": "Specify the IP address or hostname of the ThreatCompass server to which you will connect and perform automated operations."
+      },
+      {
+        "title": "API Token",
+        "type": "password",
+        "name": "api_key",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the API Key which is associated to your account that you will use to access the ThreatCompass REST API.",
+        "description": "Specify the API Key which is associated to your account that you will use to access the ThreatCompass REST API."
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not.By default, this option is set as True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not.By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_resource_list",
+      "title": "Get Resource List",
+      "description": "Retrieves the list of Resources for the specified Organization and Module",
+      "category": "investigation",
+      "annotation": "get_resource_list",
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "required": true,
+          "editable": true,
+          "value": "0",
+          "visible": true,
+          "type": "text",
+          "name": "org_id",
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
+        },
+        {
+          "title": "Module ID",
+          "name": "module_id",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+        },
+        {
+          "title": "To",
+          "name": "to",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "integer",
+          "tooltip": "Specify the exclusive Upper limit Date(in milliseconds) with which results before this date will be fetched.'Since' param will be calculated to a maximum of one-year limit from this date.",
+          "description": "Specify the exclusive Upper limit Date(in milliseconds) with which results before this date will be fetched.'Since' param will be calculated to a maximum of one-year limit from this date."
+        },
+        {
+          "title": "Since",
+          "name": "since",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "value": 1,
+          "type": "integer",
+          "tooltip": "Specify the exclusive Lower limit Date(in milliseconds) to which results after this date will be fetched. Limited to a maximum of one year If no date is given or it's more than a year from the current date or 'To' parameter.",
+          "description": "Specify the exclusive Lower limit Date(in milliseconds) to which results after this date will be fetched. Limited to a maximum of one year If no date is given or it's more than a year from the current date or 'To' parameter."
+        },
+        {
+          "title": "Page",
+          "name": "page",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "value": 1,
+          "type": "integer",
+          "tooltip": "Specify the Page number whose result you want to fetch. Default value is 1",
+          "description": "Specify the Page number whose result you want to fetch. Default value is 1"
+        },
+        {
+          "title": "Limit",
+          "name": "maxRows",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "integer",
+          "value": 10,
+          "tooltip": "Specify the maximum amount of results to retrieve. Default value is 10",
+          "description": "Specify the maximum amount of results to retrieve. Default value is 10"
+        },
+        {
+          "title": "Other Fields",
+          "tooltip": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "description": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
+        }
+      ]
+    },
+    {
+      "operation": "get_resource_by_id",
+      "title": "Get Resource by ID",
+      "description": "Retrieves the Resource for the specified Organization and Module based on Resource ID",
+      "category": "investigation",
+      "annotation": "get_resource",
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "required": true,
+          "editable": true,
+          "value": "0",
+          "visible": true,
+          "type": "text",
+          "name": "org_id",
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
+        },
+        {
+          "title": "Module ID",
+          "name": "module_id",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+        },
+        {
+          "title": "Resource ID",
+          "name": "resource_id",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the Resource which you want to fetch",
+          "description": "Specify the ID of the Resource which you want to fetch"
+        },
+        {
+          "title": "Other Fields",
+          "tooltip": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "description": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
+        }
+      ]
+    },
+    {
+      "operation": "update_resource_status",
+      "title": "Update Resource Status",
+      "description": "Modifies the Resource status for the specified Organization and Module based on Resource ID and status",
+      "category": "investigation",
+      "annotation": "update_resource_status",
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "required": true,
+          "editable": true,
+          "value": "0",
+          "visible": true,
+          "type": "text",
+          "name": "org_id",
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
+        },
+        {
+          "title": "Module ID",
+          "name": "module_id",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+        },
+        {
+          "title": "Module Type",
+          "name": "module_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Hacktivism",
+            "Mobile Apps",
+            "Credentials",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
+            "Malware",
+            "Domain Protection",
+            "Data Leakage"
+          ],
+          "tooltip": "Specify the Module Type to which you want to filter the results",
+          "description": "Specify the Module Type to which you want to filter the results"
+        },
+        {
+          "title": "Resource ID",
+          "name": "resource_id",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the resource which you want to fetch",
+          "description": "Specify the ID of the resource which you want to fetch"
+        },
+        {
+          "title": "Status",
+          "name": "status",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Positive",
+            "Negative",
+            "Informative",
+            "Not Important"
+          ],
+          "tooltip": "Specify the new Status to be assigned to the Resource",
+          "description": "Specify the new Status to be assigned to the Resource"
+        },
+        {
+          "title": "Other Fields",
+          "tooltip": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "description": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
+        }
+      ]
+    },
+    {
+      "operation": "update_resource_label",
+      "title": "Update Resource Label",
+      "description": "Modifies the Resource Label for the specified Organization and Module based on Resource ID and Label",
+      "category": "investigation",
+      "annotation": "update_resource_label",
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "required": true,
+          "editable": true,
+          "value": "0",
+          "visible": true,
+          "type": "text",
+          "name": "org_id",
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
+        },
+        {
+          "title": "Module ID",
+          "name": "module_id",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+        },
+        {
+          "title": "Module Type",
+          "name": "module_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Hacktivism",
+            "Mobile Apps",
+            "Credentials",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
+            "Malware",
+            "Domain Protection",
+            "Data Leakage"
+          ],
+          "tooltip": "Specify the Module Type to which you want to filter the results",
+          "description": "Specify the Module Type to which you want to filter the results"
+        },
+        {
+          "title": "Resource ID",
+          "name": "resources",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the ID (Comma Separated Values) of the Resource which you want to update",
+          "description": "Specify the ID (Comma Separated Values) of the Resource which you want to update"
+        },
+        {
+          "title": "Label ID",
+          "name": "label",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the Label ID to be assigned to the Resource",
+          "description": "Specify the Label ID to be assigned to the Resource"
+        },
+        {
+          "title": "Other Fields",
+          "tooltip": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "description": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
+        }
+      ]
+    },
+    {
+      "operation": "update_resource_read_status",
+      "title": "Update Resource Read Status",
+      "description": "Modifies the Read Status of Resource for the specified Organization and Module based on Resource ID",
+      "category": "investigation",
+      "annotation": "update_resource_read_status",
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "required": true,
+          "editable": true,
+          "value": "0",
+          "visible": true,
+          "type": "text",
+          "name": "org_id",
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
+        },
+        {
+          "title": "Module ID",
+          "name": "module_id",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+        },
+        {
+          "title": "Module Type",
+          "name": "module_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Hacktivism",
+            "Mobile Apps",
+            "Credentials",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
+            "Malware",
+            "Domain Protection",
+            "Data Leakage"
+          ],
+          "tooltip": "Specify the Module Type to which you want to filter the results",
+          "description": "Specify the Module Type to which you want to filter the results"
+        },
+        {
+          "title": "Resource ID",
+          "name": "resources",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the ID (Comma Separated Values) of the Resource which you want to update",
+          "description": "Specify the ID (Comma Separated Values) of the Resource which you want to update"
+        },
+        {
+          "title": "Read Status",
+          "name": "read",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "checkbox",
+          "tooltip": "Check if you want to mark this resource as read",
+          "description": "Check if you want to mark this resource as read"
+        },
+        {
+          "title": "Other Fields",
+          "tooltip": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "description": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
+        }
+      ]
+    },
+    {
+      "operation": "update_resource_rating",
+      "title": "Update Resource Rating",
+      "description": "Modifies the Rating of Resource for the specified Organization and Module based on Resource ID",
+      "category": "investigation",
+      "annotation": "update_resource_rating",
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "required": true,
+          "editable": true,
+          "value": "0",
+          "visible": true,
+          "type": "text",
+          "name": "org_id",
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
+        },
+        {
+          "title": "Module ID",
+          "name": "module_id",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+        },
+        {
+          "title": "Module Type",
+          "name": "module_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Hacktivism",
+            "Mobile Apps",
+            "Credentials",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
+            "Malware",
+            "Domain Protection",
+            "Data Leakage"
+          ],
+          "tooltip": "Specify the Module Type to which you want to filter the results",
+          "description": "Specify the Module Type to which you want to filter the results"
+        },
+        {
+          "title": "Resource ID",
+          "name": "resources",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the ID (Comma Separated Values) of the Resource which you want to update",
+          "description": "Specify the ID (Comma Separated Values) of the Resource which you want to update"
+        },
+        {
+          "title": "Rating",
+          "name": "rate",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the Rating that you want to assign the specified resource",
+          "description": "Specify the Rating that you want to assign the specified resource"
+        },
+        {
+          "title": "Other Fields",
+          "tooltip": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "description": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
+        }
+      ]
+    },
+    {
+      "operation": "update_resource_fav",
+      "title": "Update Resource FAV",
+      "description": "Modifies the Favourite Status of Resource for the specified Organization and Module based on Resource ID",
+      "category": "investigation",
+      "annotation": "update_resource_fav",
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "required": true,
+          "editable": true,
+          "value": "0",
+          "visible": true,
+          "type": "text",
+          "name": "org_id",
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
+        },
+        {
+          "title": "Module ID",
+          "name": "module_id",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+        },
+        {
+          "title": "Module Type",
+          "name": "module_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Hacktivism",
+            "Mobile Apps",
+            "Credentials",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
+            "Malware",
+            "Domain Protection",
+            "Data Leakage"
+          ],
+          "tooltip": "Specify the Module Type to which you want to filter the results",
+          "description": "Specify the Module Type to which you want to filter the results"
+        },
+        {
+          "title": "Resource ID",
+          "name": "resources",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the ID (Comma Separated Values) of the Resource which you want to update",
+          "description": "Specify the ID (Comma Separated Values) of the Resource which you want to update"
+        },
+        {
+          "title": "FAV Status",
+          "name": "status",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Not Starred",
+            "User Starred",
+            "Group Starred",
+            "Full Starred"
+          ],
+          "tooltip": "Specify the FAV Status which you want to assign the specified resource",
+          "description": "Specify the FAV Status which you want to assign the specified resource"
+        },
+        {
+          "title": "Other Fields",
+          "tooltip": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "description": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
+        }
+      ]
+    },
+    {
+      "operation": "update_resource_tlp",
+      "title": "Update Resource TLP",
+      "description": "Modifies the TLP Status of Resource for the specified Organization and Module based on Resource ID",
+      "category": "investigation",
+      "annotation": "update_resource_tlp",
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "required": true,
+          "editable": true,
+          "value": "0",
+          "visible": true,
+          "type": "text",
+          "name": "org_id",
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
+        },
+        {
+          "title": "Module ID",
+          "name": "module_id",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+        },
+        {
+          "title": "Module Type",
+          "name": "module_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Hacktivism",
+            "Mobile Apps",
+            "Credentials",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
+            "Malware",
+            "Domain Protection",
+            "Data Leakage"
+          ],
+          "tooltip": "Specify the Module Type to which you want to filter the results",
+          "description": "Specify the Module Type to which you want to filter the results"
+        },
+        {
+          "title": "Resource ID",
+          "name": "resource_id",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the Resource which you want to update",
+          "description": "Specify the ID of the Resource which you want to update"
+        },
+        {
+          "title": "TLP Status",
+          "name": "tlp_status",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "WHITE",
+            "GREEN",
+            "AMBER",
+            "RED"
+          ],
+          "tooltip": "Specify the TLP Status which you want to assign the specified resource",
+          "description": "Specify the TLP Status which you want to assign the specified resource"
+        },
+        {
+          "title": "Other Fields",
+          "tooltip": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "description": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
+        }
+      ]
+    },
+    {
+      "operation": "get_module_labels",
+      "title": "Get Module Labels",
+      "description": "Retrieves the label list of the module for the specified Organization and Module ID",
+      "category": "investigation",
+      "annotation": "get_module_labels",
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "required": true,
+          "editable": true,
+          "value": "0",
+          "visible": true,
+          "type": "text",
+          "name": "org_id",
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
+        },
+        {
+          "title": "Module ID",
+          "name": "module_id",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+        },
+        {
+          "title": "Module Type",
+          "name": "module_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Hacktivism",
+            "Mobile Apps",
+            "Credentials",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
+            "Malware",
+            "Domain Protection",
+            "Data Leakage"
+          ],
+          "tooltip": "Specify the Module Type to which you want to filter the results",
+          "description": "Specify the Module Type to which you want to filter the results"
+        },
+        {
+          "title": "Other Fields",
+          "tooltip": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "description": "Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "other_fields"
+        }
+      ]
+    }
+  ]
+}
