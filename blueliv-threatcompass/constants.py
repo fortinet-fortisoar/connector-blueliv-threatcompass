@@ -4,9 +4,9 @@ MIT License
 Copyright (c) 2024 Fortinet Inc
 Copyright end
 """
-MODULES_DICT = {"Hacktivism": "hacktivism", "MobileApps": "mobile_apps", "Credentials": "credentials",
-           "DarkWeb": "dark_web", "MediaTracker": "media_tracker", "Malware": "malware",
-           "DomainProtection": "domain_protection", "DataLeakage": "data_leakage", "CreditCards": "credit_card"}
+MODULES_DICT = {"Hacktivism": "hacktivism", "Mobile Apps": "mobile_apps", "Credentials": "credentials",
+                "Dark Web": "dark_web", "Media Tracker": "media_tracker", "Malware": "malware",
+                "Domain Protection": "domain_protection", "Data Leakage": "data_leakage", "Credit Cards": "credit_card"}
 
 set_resource_status_dict = {
     "Positive": "POSITIVE",

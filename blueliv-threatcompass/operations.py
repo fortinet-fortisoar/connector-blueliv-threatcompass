@@ -101,7 +101,7 @@ def get_resource_list(config: dict, params: dict):
         raise ConnectorError(str(err))
 
 
-def get_resource(config: dict, params: dict):
+def get_resource_by_id(config: dict, params: dict):
     try:
         tc = ThreatCompass(config)
         params = _build_payload(params)
@@ -112,7 +112,7 @@ def get_resource(config: dict, params: dict):
         raise ConnectorError(str(err))
 
 
-def set_resource_status(config: dict, params: dict):
+def update_resource_status(config: dict, params: dict):
     try:
         tc = ThreatCompass(config)
         params = _build_payload(params, set_resource_status_dict)
@@ -123,7 +123,7 @@ def set_resource_status(config: dict, params: dict):
         raise ConnectorError(str(err))
 
 
-def set_resource_label(config: dict, params: dict):
+def update_resource_label(config: dict, params: dict):
     try:
         tc = ThreatCompass(config)
         params = _build_payload(params, set_resource_status_dict)
@@ -136,7 +136,7 @@ def set_resource_label(config: dict, params: dict):
         raise ConnectorError(str(err))
 
 
-def set_resource_read_status(config: dict, params: dict):
+def update_resource_read_status(config: dict, params: dict):
     try:
         tc = ThreatCompass(config)
         params = _build_payload(params)
@@ -149,7 +149,7 @@ def set_resource_read_status(config: dict, params: dict):
         raise ConnectorError(str(err))
 
 
-def set_resource_rating(config: dict, params: dict):
+def update_resource_rating(config: dict, params: dict):
     try:
         tc = ThreatCompass(config)
         params = _build_payload(params)
@@ -162,7 +162,7 @@ def set_resource_rating(config: dict, params: dict):
         raise ConnectorError(str(err))
 
 
-def set_resource_fav(config: dict, params: dict):
+def update_resource_fav(config: dict, params: dict):
     try:
         tc = ThreatCompass(config)
         params = _build_payload(params, set_resource_fav_dict)
@@ -175,7 +175,7 @@ def set_resource_fav(config: dict, params: dict):
         raise ConnectorError(str(err))
 
 
-def set_resource_tlp(config: dict, params: dict):
+def update_resource_tlp(config: dict, params: dict):
     try:
         tc = ThreatCompass(config)
         params = _build_payload(params)
@@ -199,12 +199,12 @@ def get_module_labels(config: dict, params: dict):
 
 operations = {
     "get_resource_list": get_resource_list,
-    "get_resource": get_resource,
-    "set_resource_status": set_resource_status,
-    "set_resource_label": set_resource_label,
-    "set_resource_read_status": set_resource_read_status,
-    "set_resource_rating": set_resource_rating,
-    "set_resource_fav": set_resource_fav,
-    "set_resource_tlp": set_resource_tlp,
+    "get_resource_by_id": get_resource_by_id,
+    "update_resource_status": update_resource_status,
+    "update_resource_label": update_resource_label,
+    "update_resource_read_status": update_resource_read_status,
+    "update_resource_rating": update_resource_rating,
+    "update_resource_fav": update_resource_fav,
+    "update_resource_tlp": update_resource_tlp,
     "get_module_labels": get_module_labels
 }

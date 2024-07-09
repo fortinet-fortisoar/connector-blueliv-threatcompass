@@ -33,20 +33,20 @@ For the procedure to configure a connector, click [here](https://docs.fortinet.c
 ## Actions supported by the connector
 The following automated operations can be included in playbooks and you can also use the annotations to access operations from FortiSOAR&trade; release 4.10.0 and onwards:
 <table border=1><thead><tr><th>Function</th><th>Description</th><th>Annotation and Category</th></tr></thead><tbody><tr><td>Get Resource List</td><td>Retrieves the list of Resources for the specified Organization and Module</td><td>get_resource_list <br/>Investigation</td></tr>
-<tr><td>Get Resource</td><td>Retrieves the Resource for the specified Organization and Module based on Resource ID</td><td>get_resource <br/>Investigation</td></tr>
-<tr><td>Set Resource Status</td><td>Modifies the Resource status for the specified Organization and Module based on Resource ID and status</td><td>set_resource_status <br/>Investigation</td></tr>
-<tr><td>Set Resource Label</td><td>Modifies the Resource Label for the specified Organization and Module based on Resource ID and Label</td><td>set_resource_label <br/>Investigation</td></tr>
-<tr><td>Set Resource Read Status</td><td>Modifies the Read Status of Resource for the specified Organization and Module based on Resource ID</td><td>set_resource_read_status <br/>Investigation</td></tr>
-<tr><td>Set Resource Rating</td><td>Modifies the Rating of Resource for the specified Organization and Module based on Resource ID</td><td>set_resource_rating <br/>Investigation</td></tr>
-<tr><td>Set Resource FAV</td><td>Modifies the Favourite Status of Resource for the specified Organization and Module based on Resource ID</td><td>set_resource_fav <br/>Investigation</td></tr>
-<tr><td>Set Resource TLP</td><td>Modifies the TLP Status of Resource for the specified Organization and Module based on Resource ID</td><td>set_resource_tlp <br/>Investigation</td></tr>
+<tr><td>Get Resource by ID</td><td>Retrieves the Resource for the specified Organization and Module based on Resource ID</td><td>get_resource <br/>Investigation</td></tr>
+<tr><td>Update Resource Status</td><td>Modifies the Resource status for the specified Organization and Module based on Resource ID and status</td><td>update_resource_status <br/>Investigation</td></tr>
+<tr><td>Update Resource Label</td><td>Modifies the Resource Label for the specified Organization and Module based on Resource ID and Label</td><td>update_resource_label <br/>Investigation</td></tr>
+<tr><td>Update Resource Read Status</td><td>Modifies the Read Status of Resource for the specified Organization and Module based on Resource ID</td><td>update_resource_read_status <br/>Investigation</td></tr>
+<tr><td>Update Resource Rating</td><td>Modifies the Rating of Resource for the specified Organization and Module based on Resource ID</td><td>update_resource_rating <br/>Investigation</td></tr>
+<tr><td>Update Resource FAV</td><td>Modifies the Favourite Status of Resource for the specified Organization and Module based on Resource ID</td><td>update_resource_fav <br/>Investigation</td></tr>
+<tr><td>Update Resource TLP</td><td>Modifies the TLP Status of Resource for the specified Organization and Module based on Resource ID</td><td>update_resource_tlp <br/>Investigation</td></tr>
 <tr><td>Get Module Labels</td><td>Retrieves the label list of the module for the specified Organization and Module ID</td><td>get_module_labels <br/>Investigation</td></tr>
 </tbody></table>
 ### operation: Get Resource List
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations
-</td></tr><tr><td>Module ID</td><td>Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules
-</td></tr><tr><td>To</td><td>Specify the exclusive Upper limit Date(in milliseconds) to which results before this date will be fetched.'Since' param will be calculated to a maximum of one-year limit from this date.
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.
+</td></tr><tr><td>Module ID</td><td>Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules
+</td></tr><tr><td>To</td><td>Specify the exclusive Upper limit Date(in milliseconds) with which results before this date will be fetched.'Since' param will be calculated to a maximum of one-year limit from this date.
 </td></tr><tr><td>Since</td><td>Specify the exclusive Lower limit Date(in milliseconds) to which results after this date will be fetched. Limited to a maximum of one year If no date is given or it's more than a year from the current date or 'To' parameter.
 </td></tr><tr><td>Page</td><td>Specify the Page number whose result you want to fetch. Default value is 1
 </td></tr><tr><td>Limit</td><td>Specify the maximum amount of results to retrieve. Default value is 10
@@ -55,32 +55,32 @@ The following automated operations can be included in playbooks and you can also
 #### Output
 
  The output contains a non-dictionary value.
-### operation: Get Resource
+### operation: Get Resource by ID
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations
-</td></tr><tr><td>Module ID</td><td>Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.
+</td></tr><tr><td>Module ID</td><td>Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules
 </td></tr><tr><td>Resource ID</td><td>Specify the ID of the Resource which you want to fetch
 </td></tr><tr><td>Other Fields</td><td>Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation
 </td></tr></tbody></table>
 #### Output
 
  The output contains a non-dictionary value.
-### operation: Set Resource Status
+### operation: Update Resource Status
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations
-</td></tr><tr><td>Module ID</td><td>Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.
+</td></tr><tr><td>Module ID</td><td>Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules
 </td></tr><tr><td>Module Type</td><td>Specify the Module Type to which you want to filter the results
-</td></tr><tr><td>Resource ID</td><td>Specify the ID of the Resource which you want to fetch
+</td></tr><tr><td>Resource ID</td><td>Specify the ID of the resource which you want to fetch
 </td></tr><tr><td>Status</td><td>Specify the new Status to be assigned to the Resource
 </td></tr><tr><td>Other Fields</td><td>Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation
 </td></tr></tbody></table>
 #### Output
 
  The output contains a non-dictionary value.
-### operation: Set Resource Label
+### operation: Update Resource Label
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations
-</td></tr><tr><td>Module ID</td><td>Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.
+</td></tr><tr><td>Module ID</td><td>Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules
 </td></tr><tr><td>Module Type</td><td>Specify the Module Type to which you want to filter the results
 </td></tr><tr><td>Resource ID</td><td>Specify the ID (Comma Separated Values) of the Resource which you want to update
 </td></tr><tr><td>Label ID</td><td>Specify the Label ID to be assigned to the Resource
@@ -89,10 +89,10 @@ The following automated operations can be included in playbooks and you can also
 #### Output
 
  The output contains a non-dictionary value.
-### operation: Set Resource Read Status
+### operation: Update Resource Read Status
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations
-</td></tr><tr><td>Module ID</td><td>Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.
+</td></tr><tr><td>Module ID</td><td>Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules
 </td></tr><tr><td>Module Type</td><td>Specify the Module Type to which you want to filter the results
 </td></tr><tr><td>Resource ID</td><td>Specify the ID (Comma Separated Values) of the Resource which you want to update
 </td></tr><tr><td>Read Status</td><td>Check if you want to mark this resource as read
@@ -101,10 +101,10 @@ The following automated operations can be included in playbooks and you can also
 #### Output
 
  The output contains a non-dictionary value.
-### operation: Set Resource Rating
+### operation: Update Resource Rating
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations
-</td></tr><tr><td>Module ID</td><td>Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.
+</td></tr><tr><td>Module ID</td><td>Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules
 </td></tr><tr><td>Module Type</td><td>Specify the Module Type to which you want to filter the results
 </td></tr><tr><td>Resource ID</td><td>Specify the ID (Comma Separated Values) of the Resource which you want to update
 </td></tr><tr><td>Rating</td><td>Specify the Rating that you want to assign the specified resource
@@ -113,10 +113,10 @@ The following automated operations can be included in playbooks and you can also
 #### Output
 
  The output contains a non-dictionary value.
-### operation: Set Resource FAV
+### operation: Update Resource FAV
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations
-</td></tr><tr><td>Module ID</td><td>Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.
+</td></tr><tr><td>Module ID</td><td>Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules
 </td></tr><tr><td>Module Type</td><td>Specify the Module Type to which you want to filter the results
 </td></tr><tr><td>Resource ID</td><td>Specify the ID (Comma Separated Values) of the Resource which you want to update
 </td></tr><tr><td>FAV Status</td><td>Specify the FAV Status which you want to assign the specified resource
@@ -125,10 +125,10 @@ The following automated operations can be included in playbooks and you can also
 #### Output
 
  The output contains a non-dictionary value.
-### operation: Set Resource TLP
+### operation: Update Resource TLP
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations
-</td></tr><tr><td>Module ID</td><td>Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.
+</td></tr><tr><td>Module ID</td><td>Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules
 </td></tr><tr><td>Module Type</td><td>Specify the Module Type to which you want to filter the results
 </td></tr><tr><td>Resource ID</td><td>Specify the ID of the Resource which you want to update
 </td></tr><tr><td>TLP Status</td><td>Specify the TLP Status which you want to assign the specified resource
@@ -139,8 +139,8 @@ The following automated operations can be included in playbooks and you can also
  The output contains a non-dictionary value.
 ### operation: Get Module Labels
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations
-</td></tr><tr><td>Module ID</td><td>Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.
+</td></tr><tr><td>Module ID</td><td>Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules
 </td></tr><tr><td>Module Type</td><td>Specify the Module Type to which you want to filter the results
 </td></tr><tr><td>Other Fields</td><td>Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation
 </td></tr></tbody></table>

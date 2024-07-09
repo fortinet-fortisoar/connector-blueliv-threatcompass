@@ -65,8 +65,8 @@
           "visible": true,
           "type": "text",
           "name": "org_id",
-          "description": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations",
-          "tooltip": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations"
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
         },
         {
           "title": "Module ID",
@@ -75,8 +75,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules",
-          "description": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
         },
         {
           "title": "To",
@@ -85,8 +85,8 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "Specify the exclusive Upper limit Date(in milliseconds) to which results before this date will be fetched.'Since' param will be calculated to a maximum of one-year limit from this date.",
-          "description": "Specify the exclusive Upper limit Date(in milliseconds) to which results before this date will be fetched.'Since' param will be calculated to a maximum of one-year limit from this date."
+          "tooltip": "Specify the exclusive Upper limit Date(in milliseconds) with which results before this date will be fetched.'Since' param will be calculated to a maximum of one-year limit from this date.",
+          "description": "Specify the exclusive Upper limit Date(in milliseconds) with which results before this date will be fetched.'Since' param will be calculated to a maximum of one-year limit from this date."
         },
         {
           "title": "Since",
@@ -134,8 +134,8 @@
       ]
     },
     {
-      "operation": "get_resource",
-      "title": "Get Resource",
+      "operation": "get_resource_by_id",
+      "title": "Get Resource by ID",
       "description": "Retrieves the Resource for the specified Organization and Module based on Resource ID",
       "category": "investigation",
       "annotation": "get_resource",
@@ -150,8 +150,8 @@
           "visible": true,
           "type": "text",
           "name": "org_id",
-          "description": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations",
-          "tooltip": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations"
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
         },
         {
           "title": "Module ID",
@@ -160,8 +160,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules",
-          "description": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
         },
         {
           "title": "Resource ID",
@@ -186,11 +186,11 @@
       ]
     },
     {
-      "operation": "set_resource_status",
-      "title": "Set Resource Status",
+      "operation": "update_resource_status",
+      "title": "Update Resource Status",
       "description": "Modifies the Resource status for the specified Organization and Module based on Resource ID and status",
       "category": "investigation",
-      "annotation": "set_resource_status",
+      "annotation": "update_resource_status",
       "enabled": true,
       "output_schema": {},
       "parameters": [
@@ -202,8 +202,8 @@
           "visible": true,
           "type": "text",
           "name": "org_id",
-          "description": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations",
-          "tooltip": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations"
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
         },
         {
           "title": "Module ID",
@@ -212,8 +212,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules",
-          "description": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
         },
         {
           "title": "Module Type",
@@ -224,14 +224,14 @@
           "type": "select",
           "options": [
             "Hacktivism",
-            "MobileApps",
+            "Mobile Apps",
             "Credentials",
-            "CreditCards",
-            "DarkWeb",
-            "MediaTracker",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
             "Malware",
-            "DomainProtection",
-            "DataLeakage"
+            "Domain Protection",
+            "Data Leakage"
           ],
           "tooltip": "Specify the Module Type to which you want to filter the results",
           "description": "Specify the Module Type to which you want to filter the results"
@@ -243,8 +243,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the ID of the Resource which you want to fetch",
-          "description": "Specify the ID of the Resource which you want to fetch"
+          "tooltip": "Specify the ID of the resource which you want to fetch",
+          "description": "Specify the ID of the resource which you want to fetch"
         },
         {
           "title": "Status",
@@ -275,11 +275,11 @@
       ]
     },
     {
-      "operation": "set_resource_label",
-      "title": "Set Resource Label",
+      "operation": "update_resource_label",
+      "title": "Update Resource Label",
       "description": "Modifies the Resource Label for the specified Organization and Module based on Resource ID and Label",
       "category": "investigation",
-      "annotation": "set_resource_label",
+      "annotation": "update_resource_label",
       "enabled": true,
       "output_schema": {},
       "parameters": [
@@ -291,8 +291,8 @@
           "visible": true,
           "type": "text",
           "name": "org_id",
-          "description": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations",
-          "tooltip": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations"
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
         },
         {
           "title": "Module ID",
@@ -301,8 +301,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules",
-          "description": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
         },
         {
           "title": "Module Type",
@@ -313,14 +313,14 @@
           "type": "select",
           "options": [
             "Hacktivism",
-            "MobileApps",
+            "Mobile Apps",
             "Credentials",
-            "CreditCards",
-            "DarkWeb",
-            "MediaTracker",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
             "Malware",
-            "DomainProtection",
-            "DataLeakage"
+            "Domain Protection",
+            "Data Leakage"
           ],
           "tooltip": "Specify the Module Type to which you want to filter the results",
           "description": "Specify the Module Type to which you want to filter the results"
@@ -358,11 +358,11 @@
       ]
     },
     {
-      "operation": "set_resource_read_status",
-      "title": "Set Resource Read Status",
+      "operation": "update_resource_read_status",
+      "title": "Update Resource Read Status",
       "description": "Modifies the Read Status of Resource for the specified Organization and Module based on Resource ID",
       "category": "investigation",
-      "annotation": "set_resource_read_status",
+      "annotation": "update_resource_read_status",
       "enabled": true,
       "output_schema": {},
       "parameters": [
@@ -374,8 +374,8 @@
           "visible": true,
           "type": "text",
           "name": "org_id",
-          "description": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations",
-          "tooltip": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations"
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
         },
         {
           "title": "Module ID",
@@ -384,8 +384,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules",
-          "description": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
         },
         {
           "title": "Module Type",
@@ -396,14 +396,14 @@
           "type": "select",
           "options": [
             "Hacktivism",
-            "MobileApps",
+            "Mobile Apps",
             "Credentials",
-            "CreditCards",
-            "DarkWeb",
-            "MediaTracker",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
             "Malware",
-            "DomainProtection",
-            "DataLeakage"
+            "Domain Protection",
+            "Data Leakage"
           ],
           "tooltip": "Specify the Module Type to which you want to filter the results",
           "description": "Specify the Module Type to which you want to filter the results"
@@ -441,11 +441,11 @@
       ]
     },
     {
-      "operation": "set_resource_rating",
-      "title": "Set Resource Rating",
+      "operation": "update_resource_rating",
+      "title": "Update Resource Rating",
       "description": "Modifies the Rating of Resource for the specified Organization and Module based on Resource ID",
       "category": "investigation",
-      "annotation": "set_resource_rating",
+      "annotation": "update_resource_rating",
       "enabled": true,
       "output_schema": {},
       "parameters": [
@@ -457,8 +457,8 @@
           "visible": true,
           "type": "text",
           "name": "org_id",
-          "description": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations",
-          "tooltip": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations"
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
         },
         {
           "title": "Module ID",
@@ -467,8 +467,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules",
-          "description": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
         },
         {
           "title": "Module Type",
@@ -479,14 +479,14 @@
           "type": "select",
           "options": [
             "Hacktivism",
-            "MobileApps",
+            "Mobile Apps",
             "Credentials",
-            "CreditCards",
-            "DarkWeb",
-            "MediaTracker",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
             "Malware",
-            "DomainProtection",
-            "DataLeakage"
+            "Domain Protection",
+            "Data Leakage"
           ],
           "tooltip": "Specify the Module Type to which you want to filter the results",
           "description": "Specify the Module Type to which you want to filter the results"
@@ -524,11 +524,11 @@
       ]
     },
     {
-      "operation": "set_resource_fav",
-      "title": "Set Resource FAV",
+      "operation": "update_resource_fav",
+      "title": "Update Resource FAV",
       "description": "Modifies the Favourite Status of Resource for the specified Organization and Module based on Resource ID",
       "category": "investigation",
-      "annotation": "set_resource_fav",
+      "annotation": "update_resource_fav",
       "enabled": true,
       "output_schema": {},
       "parameters": [
@@ -540,8 +540,8 @@
           "visible": true,
           "type": "text",
           "name": "org_id",
-          "description": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations",
-          "tooltip": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations"
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
         },
         {
           "title": "Module ID",
@@ -550,8 +550,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules",
-          "description": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
         },
         {
           "title": "Module Type",
@@ -562,14 +562,14 @@
           "type": "select",
           "options": [
             "Hacktivism",
-            "MobileApps",
+            "Mobile Apps",
             "Credentials",
-            "CreditCards",
-            "DarkWeb",
-            "MediaTracker",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
             "Malware",
-            "DomainProtection",
-            "DataLeakage"
+            "Domain Protection",
+            "Data Leakage"
           ],
           "tooltip": "Specify the Module Type to which you want to filter the results",
           "description": "Specify the Module Type to which you want to filter the results"
@@ -613,11 +613,11 @@
       ]
     },
     {
-      "operation": "set_resource_tlp",
-      "title": "Set Resource TLP",
+      "operation": "update_resource_tlp",
+      "title": "Update Resource TLP",
       "description": "Modifies the TLP Status of Resource for the specified Organization and Module based on Resource ID",
       "category": "investigation",
-      "annotation": "set_resource_tlp",
+      "annotation": "update_resource_tlp",
       "enabled": true,
       "output_schema": {},
       "parameters": [
@@ -629,8 +629,8 @@
           "visible": true,
           "type": "text",
           "name": "org_id",
-          "description": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations",
-          "tooltip": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations"
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
         },
         {
           "title": "Module ID",
@@ -639,8 +639,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules",
-          "description": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
         },
         {
           "title": "Module Type",
@@ -651,14 +651,14 @@
           "type": "select",
           "options": [
             "Hacktivism",
-            "MobileApps",
+            "Mobile Apps",
             "Credentials",
-            "CreditCards",
-            "DarkWeb",
-            "MediaTracker",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
             "Malware",
-            "DomainProtection",
-            "DataLeakage"
+            "Domain Protection",
+            "Data Leakage"
           ],
           "tooltip": "Specify the Module Type to which you want to filter the results",
           "description": "Specify the Module Type to which you want to filter the results"
@@ -718,8 +718,8 @@
           "visible": true,
           "type": "text",
           "name": "org_id",
-          "description": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations",
-          "tooltip": "Specify the Organization ID to which you want to filter the results. Specify the value 0 to Get Results from all organizations"
+          "description": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.",
+          "tooltip": "Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations."
         },
         {
           "title": "Module ID",
@@ -728,8 +728,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules",
-          "description": "Specify the Module ID to which you want to filter the results. Specify the value 0 to Get Results from all Modules"
+          "tooltip": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules",
+          "description": "Specify the Module ID with which you want to filter the results. Specify the value 0 to Get Results from all Modules"
         },
         {
           "title": "Module Type",
@@ -740,14 +740,14 @@
           "type": "select",
           "options": [
             "Hacktivism",
-            "MobileApps",
+            "Mobile Apps",
             "Credentials",
-            "CreditCards",
-            "DarkWeb",
-            "MediaTracker",
+            "Credit Cards",
+            "Dark Web",
+            "Media Tracker",
             "Malware",
-            "DomainProtection",
-            "DataLeakage"
+            "Domain Protection",
+            "Data Leakage"
           ],
           "tooltip": "Specify the Module Type to which you want to filter the results",
           "description": "Specify the Module Type to which you want to filter the results"
@@ -764,6 +764,5 @@
         }
       ]
     }
-
   ]
 }
