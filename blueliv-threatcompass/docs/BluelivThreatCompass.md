@@ -1,6 +1,7 @@
 ## About the connector
 Blueliv ThreatCompass systematically looks for information about companies,products, people, brands, logos, assets, technology and other information, depending on your needs. Blueliv ThreatCompass allows you to monitor and track all this information to keep your data, your organization and its employees safe
 <p>This document provides information about the Blueliv ThreatCompass Connector, which facilitates automated interactions, with a Blueliv ThreatCompass server using FortiSOAR&trade; playbooks. Add the Blueliv ThreatCompass Connector as a step in FortiSOAR&trade; playbooks and perform automated operations with Blueliv ThreatCompass.</p>
+
 ### Version information
 
 Connector Version: 1.0.0
@@ -30,6 +31,7 @@ For the procedure to configure a connector, click [here](https://docs.fortinet.c
 </td>
 </tr><tr><td>Verify SSL</td><td>Specifies whether the SSL certificate for the server is to be verified or not. <br/>By default, this option is set to True.</td></tr>
 </tbody></table>
+
 ## Actions supported by the connector
 The following automated operations can be included in playbooks and you can also use the annotations to access operations from FortiSOAR&trade; release 4.10.0 and onwards:
 <table border=1><thead><tr><th>Function</th><th>Description</th><th>Annotation and Category</th></tr></thead><tbody><tr><td>Get Resource List</td><td>Retrieves the list of Resources for the specified Organization and Module</td><td>get_resource_list <br/>Investigation</td></tr>
@@ -42,6 +44,7 @@ The following automated operations can be included in playbooks and you can also
 <tr><td>Update Resource TLP</td><td>Modifies the TLP Status of Resource for the specified Organization and Module based on Resource ID</td><td>update_resource_tlp <br/>Investigation</td></tr>
 <tr><td>Get Module Labels</td><td>Retrieves the label list of the module for the specified Organization and Module ID</td><td>get_module_labels <br/>Investigation</td></tr>
 </tbody></table>
+
 ### operation: Get Resource List
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the Organization ID with which you want to filter the results. Specify the value 0 to Get Results from all organizations.
@@ -52,6 +55,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Limit</td><td>Specify the maximum amount of results to retrieve. Default value is 10
 </td></tr><tr><td>Other Fields</td><td>Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -62,6 +66,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Resource ID</td><td>Specify the ID of the Resource which you want to fetch
 </td></tr><tr><td>Other Fields</td><td>Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -74,6 +79,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Status</td><td>Specify the new Status to be assigned to the Resource
 </td></tr><tr><td>Other Fields</td><td>Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -86,6 +92,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Label ID</td><td>Specify the Label ID to be assigned to the Resource
 </td></tr><tr><td>Other Fields</td><td>Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -98,6 +105,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Read Status</td><td>Check if you want to mark this resource as read
 </td></tr><tr><td>Other Fields</td><td>Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -110,6 +118,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Rating</td><td>Specify the Rating that you want to assign the specified resource
 </td></tr><tr><td>Other Fields</td><td>Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -122,6 +131,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>FAV Status</td><td>Specify the FAV Status which you want to assign the specified resource
 </td></tr><tr><td>Other Fields</td><td>Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -134,6 +144,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>TLP Status</td><td>Specify the TLP Status which you want to assign the specified resource
 </td></tr><tr><td>Other Fields</td><td>Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -144,6 +155,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Module Type</td><td>Specify the Module Type to which you want to filter the results
 </td></tr><tr><td>Other Fields</td><td>Specify fields in the JSON format to be sent as json_data according to ThreatCompass REST API Documentation
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
